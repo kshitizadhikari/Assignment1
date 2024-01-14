@@ -13,7 +13,7 @@ namespace Assignment1
         static void Main(string[] args)
         {
 
-            int[] nums = {8, 7, 2, 5, 3, 1};
+            int[] nums = { 8, 7, 2, 5, 3, 1 };
             int target1 = 10;
             int[] nums2 = { 5, 2, 6, 8, 1, 9 };
             int target2 = 12;
@@ -30,7 +30,7 @@ namespace Assignment1
 
                     if (newSet.Contains(complement))
                     {
-                        Console.WriteLine($"Pair Found: ({num}, {complement})");
+                        Console.WriteLine($"Pair Found: ({num}, {complement})\n");
                         flag = 1;
                         break;
                     }
@@ -44,12 +44,24 @@ namespace Assignment1
                 }
             }
 
+            void printInfo(int[] arr, int target)
+            {
+                Console.Write("Input: [ ");
+                foreach (int num in arr)
+                {
+                    Console.Write($"{num} ");
+                }
+                Console.WriteLine($"]\nTarget: {target}");
+            }
+            printInfo(nums, target1);
             findPair(nums, target1);
+
+            printInfo(nums2, target2);
             findPair(nums2, target2);
 
             Console.ReadKey();
         }
 
-        
+
     }
 }
